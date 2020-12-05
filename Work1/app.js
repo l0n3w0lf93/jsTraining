@@ -33,7 +33,7 @@ app.engine('ejs', require('ejs').renderFile);
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -41,7 +41,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
@@ -59,7 +59,7 @@ app.use(function (err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.render('register');
 });
 var users = require('./routes/users.js');
 app.use('/users', users);
